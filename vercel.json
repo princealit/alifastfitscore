@@ -10,8 +10,5 @@
       "src": "/(.*)",
       "dest": "fitscore_test_app.py"
     }
-  ],
-  "env": {
-    "OPENAI_API_KEY": "@openai_api_key"
-  }
+  ]
 } 
