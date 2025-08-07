@@ -1,0 +1,22 @@
+{
+  "builds": [
+    {
+      "src": "fitscore_test_app.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "fitscore_test_app.py"
+    }
+  ],
+  "env": {
+    "OPENAI_API_KEY": "@openai_api_key"
+  },
+  "functions": {
+    "fitscore_test_app.py": {
+      "maxDuration": 30
+    }
+  }
+} 
