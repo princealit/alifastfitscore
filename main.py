@@ -86,8 +86,14 @@ def calculate_fit_score(resume_text: str, job_description: str) -> dict:
             match_score += min(len(set(r_matches) & set(j_matches)) * score, 8)
     
     # Calculate overall score
+    # CRITICAL FIX: Cap scores first
+    skills_score = min(skills_score, 10)
+    match_score = min(match_score, 10)
+    
+    # Calculate overall score (capped at 10)
     overall = (education_score * 0.2 + experience_score * 0.3 + 
                skills_score * 0.3 + match_score * 0.2)
+    overall = min(overall, 10)  # Cap at 10
     
     # Decision logic
     if overall >= 8.5:
