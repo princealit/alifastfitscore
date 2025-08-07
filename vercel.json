@@ -13,10 +13,5 @@
   ],
   "env": {
     "OPENAI_API_KEY": "@openai_api_key"
-  },
-  "functions": {
-    "fitscore_test_app.py": {
-      "maxDuration": 30
-    }
   }
 } 
